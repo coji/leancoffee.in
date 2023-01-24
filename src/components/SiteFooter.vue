@@ -1,18 +1,24 @@
 <template>
-  <v-footer padless color="brown lighten-5" class="justify-center pt-16">
-    <div class="text-center">
-      <nuxt-link class="text-decoration-none" nuxt to="/privacy">
-        プライバシー
-      </nuxt-link>
-      <div class="pt-4 pb-16">
-        <a
-          class="text-decoration-none"
-          target="_blank"
-          href="https://techtalk.jp/"
-        >
-          運営会社
-        </a>
-      </div>
-    </div>
+  <v-footer padless color="lighten-5" class="justify-center py-8">
+    <v-row justify="center" no-gutters>
+      <v-btn
+        v-for="link in [
+          { label: 'プライバシー', href: '/privacy' },
+          { label: '運営会社', href: 'https://www.techtalk.jp/' },
+          {
+            label: 'GitHub',
+            href: 'https://github.com/coji/leancoffee.in'
+          }
+        ]"
+        :key="link.label"
+        color="lighten-2"
+        text
+        rounded
+        target="_blank"
+        :href="link.href"
+      >
+        {{ link.label }}
+      </v-btn>
+    </v-row>
   </v-footer>
 </template>
