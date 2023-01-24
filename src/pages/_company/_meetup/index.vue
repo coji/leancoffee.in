@@ -127,16 +127,7 @@
           <!-- candiadtes  -->
           <v-col cols="12" sm="4" order="2" order-sm="1">
             <div
-              class="
-                primary
-                rounded
-                px-2
-                py-1
-                white--text
-                mb-2
-                d-flex
-                align-center
-              "
+              class="primary rounded px-2 py-1 white--text mb-2 d-flex align-center"
             >
               <div class="flex-grow-1">候補</div>
               <div class="d-inline-flex">
@@ -171,8 +162,9 @@
               @start="drag = true"
               @end="drag = false"
             >
-              <template v-for="topic of candidateTopics" :key="topic.id">
+              <template v-for="topic of candidateTopics">
                 <TopicCard
+                  :key="topic.id"
                   :topic="topic"
                   :vote-up="handleVoteUp"
                   :vote-down="handleVoteDown"
@@ -206,16 +198,7 @@
           <!-- discussing now  -->
           <v-col cols="12" sm="4" order="1" order-sm="2">
             <div
-              class="
-                primary
-                rounded
-                px-2
-                py-1
-                white--text
-                mb-2
-                d-flex
-                align-center
-              "
+              class="primary rounded px-2 py-1 white--text mb-2 d-flex align-center"
             >
               <div class="flex-grow-1">アジェンダ</div>
             </div>
@@ -229,8 +212,9 @@
               @start="drag = true"
               @end="drag = false"
             >
-              <template v-for="topic of nowTopics" :key="topic.id">
+              <template v-for="topic of nowTopics">
                 <TopicCard
+                  :key="topic.id"
                   :topic="topic"
                   :vote-up="handleVoteUp"
                   :vote-down="handleVoteDown"
@@ -268,8 +252,9 @@
               @start="drag = true"
               @end="drag = false"
             >
-              <template v-for="topic of doneTopics" :key="topic.id">
+              <template v-for="topic of doneTopics">
                 <TopicCard
+                  :key="topic.id"
                   :topic="topic"
                   :vote-up="handleVoteUp"
                   :vote-down="handleVoteDown"
