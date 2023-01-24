@@ -1,5 +1,5 @@
 <template>
-  <div v-if="value" @click="onClickView">
+  <div v-if="value">
     <!-- eslint-disable-next-line vue/no-v-html -->
     <p v-html="linkifiedNote" />
   </div>
@@ -8,7 +8,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType, computed } from '@nuxtjs/composition-api'
-import linkifyStr from 'linkifyjs/string'
+import linkifyHtml from 'linkify-html'
 
 export default defineComponent({
   props: {
@@ -19,19 +19,15 @@ export default defineComponent({
     }
   },
   setup(props) {
-    const onClickView = (e: Event) => {
-      console.log('onClickView:', e)
-    }
-
     const linkifiedNote = computed(() => {
-      return linkifyStr(props.value, {
+      return linkifyHtml(props.value, {
         defaultProtocol: 'https',
-        nl2br: true
+        nl2br: true,
+        target: '_blank'
       })
     })
 
     return {
-      onClickView,
       linkifiedNote
     }
   }

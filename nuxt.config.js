@@ -48,6 +48,7 @@ const config = {
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/stylelint-module',
+    '@nuxt/postcss8',
     '@nuxtjs/vuetify',
     '@nuxtjs/composition-api/module'
   ],
